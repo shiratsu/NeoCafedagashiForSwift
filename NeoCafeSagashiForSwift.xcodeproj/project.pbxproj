@@ -1,0 +1,431 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		586639C619400A3800623397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586639C519400A3800623397 /* AppDelegate.swift */; };
+		586639C919400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 586639C719400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodeld */; };
+		586639CB19400A3800623397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586639CA19400A3800623397 /* ViewController.swift */; };
+		586639CE19400A3800623397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586639CC19400A3800623397 /* Main.storyboard */; };
+		586639D019400A3800623397 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586639CF19400A3800623397 /* Images.xcassets */; };
+		586639DC19400A3800623397 /* NeoCafeSagashiForSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586639DB19400A3800623397 /* NeoCafeSagashiForSwiftTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		586639D619400A3800623397 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 586639B819400A3800623397 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 586639BF19400A3800623397;
+			remoteInfo = NeoCafeSagashiForSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		586639C019400A3800623397 /* NeoCafeSagashiForSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeoCafeSagashiForSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		586639C419400A3800623397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		586639C519400A3800623397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		586639C819400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NeoCafeSagashiForSwift.xcdatamodel; sourceTree = "<group>"; };
+		586639CA19400A3800623397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		586639CD19400A3800623397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		586639CF19400A3800623397 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		586639D519400A3800623397 /* NeoCafeSagashiForSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeoCafeSagashiForSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		586639DA19400A3800623397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		586639DB19400A3800623397 /* NeoCafeSagashiForSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoCafeSagashiForSwiftTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		586639BD19400A3800623397 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		586639D219400A3800623397 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		586639B719400A3800623397 = {
+			isa = PBXGroup;
+			children = (
+				586639C219400A3800623397 /* NeoCafeSagashiForSwift */,
+				586639D819400A3800623397 /* NeoCafeSagashiForSwiftTests */,
+				586639C119400A3800623397 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		586639C119400A3800623397 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				586639C019400A3800623397 /* NeoCafeSagashiForSwift.app */,
+				586639D519400A3800623397 /* NeoCafeSagashiForSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		586639C219400A3800623397 /* NeoCafeSagashiForSwift */ = {
+			isa = PBXGroup;
+			children = (
+				586639C519400A3800623397 /* AppDelegate.swift */,
+				586639CA19400A3800623397 /* ViewController.swift */,
+				586639CC19400A3800623397 /* Main.storyboard */,
+				586639CF19400A3800623397 /* Images.xcassets */,
+				586639C719400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodeld */,
+				586639C319400A3800623397 /* Supporting Files */,
+			);
+			path = NeoCafeSagashiForSwift;
+			sourceTree = "<group>";
+		};
+		586639C319400A3800623397 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				586639C419400A3800623397 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		586639D819400A3800623397 /* NeoCafeSagashiForSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				586639DB19400A3800623397 /* NeoCafeSagashiForSwiftTests.swift */,
+				586639D919400A3800623397 /* Supporting Files */,
+			);
+			path = NeoCafeSagashiForSwiftTests;
+			sourceTree = "<group>";
+		};
+		586639D919400A3800623397 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				586639DA19400A3800623397 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		586639BF19400A3800623397 /* NeoCafeSagashiForSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 586639DF19400A3800623397 /* Build configuration list for PBXNativeTarget "NeoCafeSagashiForSwift" */;
+			buildPhases = (
+				586639BC19400A3800623397 /* Sources */,
+				586639BD19400A3800623397 /* Frameworks */,
+				586639BE19400A3800623397 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NeoCafeSagashiForSwift;
+			productName = NeoCafeSagashiForSwift;
+			productReference = 586639C019400A3800623397 /* NeoCafeSagashiForSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		586639D419400A3800623397 /* NeoCafeSagashiForSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 586639E219400A3800623397 /* Build configuration list for PBXNativeTarget "NeoCafeSagashiForSwiftTests" */;
+			buildPhases = (
+				586639D119400A3800623397 /* Sources */,
+				586639D219400A3800623397 /* Frameworks */,
+				586639D319400A3800623397 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				586639D719400A3800623397 /* PBXTargetDependency */,
+			);
+			name = NeoCafeSagashiForSwiftTests;
+			productName = NeoCafeSagashiForSwiftTests;
+			productReference = 586639D519400A3800623397 /* NeoCafeSagashiForSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		586639B819400A3800623397 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "HIRATSUKA SHUNSUKE";
+				TargetAttributes = {
+					586639BF19400A3800623397 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					586639D419400A3800623397 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 586639BF19400A3800623397;
+					};
+				};
+			};
+			buildConfigurationList = 586639BB19400A3800623397 /* Build configuration list for PBXProject "NeoCafeSagashiForSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 586639B719400A3800623397;
+			productRefGroup = 586639C119400A3800623397 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				586639BF19400A3800623397 /* NeoCafeSagashiForSwift */,
+				586639D419400A3800623397 /* NeoCafeSagashiForSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		586639BE19400A3800623397 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586639CE19400A3800623397 /* Main.storyboard in Resources */,
+				586639D019400A3800623397 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		586639D319400A3800623397 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		586639BC19400A3800623397 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586639CB19400A3800623397 /* ViewController.swift in Sources */,
+				586639C919400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodeld in Sources */,
+				586639C619400A3800623397 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		586639D119400A3800623397 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586639DC19400A3800623397 /* NeoCafeSagashiForSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		586639D719400A3800623397 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 586639BF19400A3800623397 /* NeoCafeSagashiForSwift */;
+			targetProxy = 586639D619400A3800623397 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		586639CC19400A3800623397 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				586639CD19400A3800623397 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		586639DD19400A3800623397 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		586639DE19400A3800623397 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		586639E019400A3800623397 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = NeoCafeSagashiForSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		586639E119400A3800623397 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = NeoCafeSagashiForSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		586639E319400A3800623397 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NeoCafeSagashiForSwift.app/NeoCafeSagashiForSwift";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NeoCafeSagashiForSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		586639E419400A3800623397 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NeoCafeSagashiForSwift.app/NeoCafeSagashiForSwift";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NeoCafeSagashiForSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		586639BB19400A3800623397 /* Build configuration list for PBXProject "NeoCafeSagashiForSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				586639DD19400A3800623397 /* Debug */,
+				586639DE19400A3800623397 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		586639DF19400A3800623397 /* Build configuration list for PBXNativeTarget "NeoCafeSagashiForSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				586639E019400A3800623397 /* Debug */,
+				586639E119400A3800623397 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		586639E219400A3800623397 /* Build configuration list for PBXNativeTarget "NeoCafeSagashiForSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				586639E319400A3800623397 /* Debug */,
+				586639E419400A3800623397 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		586639C719400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				586639C819400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodel */,
+			);
+			currentVersion = 586639C819400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodel */;
+			path = NeoCafeSagashiForSwift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 586639B819400A3800623397 /* Project object */;
+}
