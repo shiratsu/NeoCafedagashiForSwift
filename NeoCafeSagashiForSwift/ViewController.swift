@@ -8,11 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,GMSMapViewDelegate {
+    
+    
+    var calloutview: SMCalloutView?
+    var lm: CLLocationManager?
+    
+    @IBOutlet var mapview : GMSMapView
+    @IBOutlet var gadbnrview : GADBannerView
                             
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        mapview.myLocationEnabled = true
+        mapview.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
