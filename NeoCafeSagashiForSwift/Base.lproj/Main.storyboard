@@ -16,17 +16,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-iR-eQP" customClass="GMSMapView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-iR-eQP" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="63" width="480" height="365"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7nh-y1-FEQ" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nh-y1-FEQ" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="430" width="480" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ghV-iR-eQP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1g7-Oy-6Kj"/>
+                            <constraint firstAttribute="bottom" secondItem="7nh-y1-FEQ" secondAttribute="bottom" id="ApV-Az-xO7"/>
+                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="trailing" secondItem="ghV-iR-eQP" secondAttribute="trailing" id="Iom-Qg-eeO"/>
+                            <constraint firstItem="ghV-iR-eQP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="63" id="Iw3-Bw-0Ux"/>
+                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="top" secondItem="ghV-iR-eQP" secondAttribute="bottom" constant="50" id="Lb3-IK-BrZ"/>
+                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="leading" secondItem="ghV-iR-eQP" secondAttribute="leading" id="Ytu-g1-j3J"/>
+                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="430" id="cBc-O6-9sO"/>
+                            <constraint firstItem="ghV-iR-eQP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="63" id="d9Y-CT-rko"/>
+                            <constraint firstAttribute="trailing" secondItem="ghV-iR-eQP" secondAttribute="trailing" id="qlS-Zs-15u"/>
+                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="top" secondItem="ghV-iR-eQP" secondAttribute="bottom" constant="2" id="vQg-AW-Gru"/>
+                        </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vQg-AW-Gru"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="6Su-d8-CMA"/>
                     <connections>
