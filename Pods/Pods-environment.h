@@ -54,6 +54,30 @@
 #define COCOAPODS_VERSION_MINOR_Google_Maps_iOS_SDK 8
 #define COCOAPODS_VERSION_PATCH_Google_Maps_iOS_SDK 1
 
+// MagicalRecord
+#define COCOAPODS_POD_AVAILABLE_MagicalRecord
+#define COCOAPODS_VERSION_MAJOR_MagicalRecord 2
+#define COCOAPODS_VERSION_MINOR_MagicalRecord 2
+#define COCOAPODS_VERSION_PATCH_MagicalRecord 0
+
+// MagicalRecord/Core
+#define COCOAPODS_POD_AVAILABLE_MagicalRecord_Core
+#define COCOAPODS_VERSION_MAJOR_MagicalRecord_Core 2
+#define COCOAPODS_VERSION_MINOR_MagicalRecord_Core 2
+#define COCOAPODS_VERSION_PATCH_MagicalRecord_Core 0
+
+// NTYCSVTable
+#define COCOAPODS_POD_AVAILABLE_NTYCSVTable
+#define COCOAPODS_VERSION_MAJOR_NTYCSVTable 0
+#define COCOAPODS_VERSION_MINOR_NTYCSVTable 3
+#define COCOAPODS_VERSION_PATCH_NTYCSVTable 1
+
+// NTYPopulator
+#define COCOAPODS_POD_AVAILABLE_NTYPopulator
+#define COCOAPODS_VERSION_MAJOR_NTYPopulator 0
+#define COCOAPODS_VERSION_MINOR_NTYPopulator 2
+#define COCOAPODS_VERSION_PATCH_NTYPopulator 0
+
 // SMCalloutView
 #define COCOAPODS_POD_AVAILABLE_SMCalloutView
 #define COCOAPODS_VERSION_MAJOR_SMCalloutView 2

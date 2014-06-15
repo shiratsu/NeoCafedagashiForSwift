@@ -16,36 +16,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-iR-eQP" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="63" width="480" height="365"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghV-iR-eQP" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nh-y1-FEQ" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7nh-y1-FEQ" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="430" width="480" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yXW-AI-IVZ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ghV-iR-eQP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1g7-Oy-6Kj"/>
-                            <constraint firstAttribute="bottom" secondItem="7nh-y1-FEQ" secondAttribute="bottom" id="ApV-Az-xO7"/>
-                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="trailing" secondItem="ghV-iR-eQP" secondAttribute="trailing" id="Iom-Qg-eeO"/>
-                            <constraint firstItem="ghV-iR-eQP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="63" id="Iw3-Bw-0Ux"/>
-                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="top" secondItem="ghV-iR-eQP" secondAttribute="bottom" constant="50" id="Lb3-IK-BrZ"/>
-                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="leading" secondItem="ghV-iR-eQP" secondAttribute="leading" id="Ytu-g1-j3J"/>
-                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="430" id="cBc-O6-9sO"/>
-                            <constraint firstItem="ghV-iR-eQP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="63" id="d9Y-CT-rko"/>
-                            <constraint firstAttribute="trailing" secondItem="ghV-iR-eQP" secondAttribute="trailing" id="qlS-Zs-15u"/>
-                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="top" secondItem="ghV-iR-eQP" secondAttribute="bottom" constant="2" id="vQg-AW-Gru"/>
+                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="top" secondItem="ghV-iR-eQP" secondAttribute="bottom" id="37T-U2-Go4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7nh-y1-FEQ" secondAttribute="bottom" id="K3i-bb-r4P"/>
+                            <constraint firstItem="ghV-iR-eQP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="63" id="WFa-Aq-MEi"/>
+                            <constraint firstAttribute="trailing" secondItem="7nh-y1-FEQ" secondAttribute="trailing" id="eCa-20-iRY"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="vQg-AW-Gru"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="6Su-d8-CMA"/>
+                    <navigationItem key="navigationItem" id="6Su-d8-CMA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="FDf-9L-nMu">
+                            <connections>
+                                <action selector="reloadLocation:" destination="BYZ-38-t0r" id="bpA-hU-Xre"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4ks-Uy-gEA">
+                            <connections>
+                                <action selector="openMenu:" destination="BYZ-38-t0r" id="RpN-dL-jJs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="480" height="480"/>
                     <connections>
                         <outlet property="gadbnrview" destination="7nh-y1-FEQ" id="hRc-lw-Q0o"/>
                         <outlet property="mapview" destination="ghV-iR-eQP" id="Flj-rN-Y3a"/>
@@ -63,6 +68,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HgB-oW-SVf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.14565812510000001" green="0.51642100950000003" blue="0.93860394020000004" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

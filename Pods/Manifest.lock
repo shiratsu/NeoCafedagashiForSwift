@@ -19,18 +19,29 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Google-Maps-iOS-SDK (1.8.1)
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core
+  - MagicalRecord/Core (2.2)
+  - NTYCSVTable (0.3.1)
+  - NTYPopulator (0.2.0):
+    - NTYCSVTable
   - SMCalloutView (2.0)
   - SVProgressHUD (1.0)
 
 DEPENDENCIES:
   - AFNetworking
   - Google-Maps-iOS-SDK (~> 1.8.1)
+  - MagicalRecord
+  - NTYPopulator
   - SMCalloutView (~> 2.0)
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
   Google-Maps-iOS-SDK: 542561448224b92d790483674b7313b13764e624
+  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
+  NTYCSVTable: dc65f4f84c212877b90516670bebea0b68bed7fa
+  NTYPopulator: fbc83bd2e5cb601ab7ae135884c1efbcc2a5f177
   SMCalloutView: c1906604d47c058400ade5c9d52ab98aa77b7e76
   SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
 

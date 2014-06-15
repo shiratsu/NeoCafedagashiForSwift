@@ -14,6 +14,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MagicalRecord.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NTYCSVTable.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NTYPopulator.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SMCalloutView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E6817ABCAA7488FA7DE2AC2</key>
+		<key>3613914DEBCC4B0E93948A88</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>33E32CD3522C489C94501AA4</key>
+		<key>65F4298696BF4B80A83BF73C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C1787149271A4210A74A6BAE</key>
+		<key>7A2451F59B1C4B2F98838E24</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C684407C2D8E4670A5E604C9</key>
+		<key>7F24D8F70FA64082B92BA179</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1622B3BE3E94B3382528CC4</key>
+		<key>8BAAC4C555A043CFA7CD32B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90EFBAC0BC7C44A2AB40298E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7507A50F47940E9A4ECC8A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB829840BA634C2A8C944EAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

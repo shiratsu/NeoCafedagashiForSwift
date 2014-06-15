@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(gApiKey)
         services_ = GMSServices.sharedServices()
         
+        MagicalRecord.setupCoreDataStackWithAutoMigratingSqliteStoreNamed("NeoCafeSagashiForSwift.sqlite")
+        
         return true
     }
 
@@ -102,6 +104,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var persistentStoreCoordinator: NSPersistentStoreCoordinator {
         if !_persistentStoreCoordinator {
             let storeURL = self.applicationDocumentsDirectory.URLByAppendingPathComponent("NeoCafeSagashiForSwift.sqlite")
+            
+            
+            //ここに初期値コピーを書くっぽい
+//            var fileManager:NSFileManager = NSFileManager.defaultManager()
+//            
+//            if !fileManager.fileExistsAtPath(storeURL.path) {
+//                var defaultStoreURL:NSURL = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("NeoCafeSagashiForSwift.sqlite",ofType:"sqlite"))
+//                
+//                if defaultStoreURL != nil {
+//                    fileManager.copyItemAtURL(defaultStoreURL, toURL:storeURL, error:nil)
+//                }
+//                
+//                
+//            }
+            
+            
             var error: NSError? = nil
             _persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
             if _persistentStoreCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &error) == nil {

@@ -9,3 +9,5 @@
 #import <SMCalloutView/SMCalloutView.h>
 #import "GADBannerView.h"
 #import "GoogleMapAPIKey.h"
+#import "CoreData+MagicalRecord.h"
+#import "Cafe.h"

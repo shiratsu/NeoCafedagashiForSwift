@@ -22,6 +22,13 @@
 		586639FC1940C81900623397 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586639F91940C81900623397 /* SystemConfiguration.framework */; };
 		58663A0A194124E100623397 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58663A09194124E100623397 /* libGoogleAdMobAds.a */; };
 		58663A0C1941278600623397 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58663A0B1941278600623397 /* CoreLocation.framework */; };
+		58663A1F19443E6500623397 /* Cafe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58663A1D19443E6500623397 /* Cafe.xcdatamodeld */; };
+		58663A2019443E6500623397 /* Cafe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58663A1D19443E6500623397 /* Cafe.xcdatamodeld */; };
+		58663A251944664400623397 /* _Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58663A221944664400623397 /* _Cafe.m */; };
+		58663A261944664400623397 /* _Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58663A221944664400623397 /* _Cafe.m */; };
+		58663A271944664400623397 /* Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58663A241944664400623397 /* Cafe.m */; };
+		58663A281944664400623397 /* Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58663A241944664400623397 /* Cafe.m */; };
+		58FDAF8D194C52D8009CFAED /* MyUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FDAF8C194C52D8009CFAED /* MyUtil.swift */; };
 		D427FB06C0A346A5B7BE124D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8818A8D7BC05413E8656EFF3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +78,12 @@
 		58663A0B1941278600623397 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		58663A0D1942A1A500623397 /* GoogleMapAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapAPIKey.h; sourceTree = "<group>"; };
 		58663A0F194312D000623397 /* NeoCafeSagashiForSwiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NeoCafeSagashiForSwiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		58663A1E19443E6500623397 /* Cafe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cafe.xcdatamodel; sourceTree = "<group>"; };
+		58663A211944664400623397 /* _Cafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Cafe.h; path = Model/_Cafe.h; sourceTree = "<group>"; };
+		58663A221944664400623397 /* _Cafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Cafe.m; path = Model/_Cafe.m; sourceTree = "<group>"; };
+		58663A231944664400623397 /* Cafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cafe.h; path = Model/Cafe.h; sourceTree = "<group>"; };
+		58663A241944664400623397 /* Cafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cafe.m; path = Model/Cafe.m; sourceTree = "<group>"; };
+		58FDAF8C194C52D8009CFAED /* MyUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtil.swift; sourceTree = "<group>"; };
 		8818A8D7BC05413E8656EFF3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +118,8 @@
 		586639B719400A3800623397 = {
 			isa = PBXGroup;
 			children = (
+				58FDAF89194C529C009CFAED /* lib */,
+				58663A1C19443E3600623397 /* model */,
 				58663A0E1943129400623397 /* objective-c */,
 				58663A0D1942A1A500623397 /* GoogleMapAPIKey.h */,
 				586639EE1940B5ED00623397 /* admob */,
@@ -190,6 +205,26 @@
 				58663A0F194312D000623397 /* NeoCafeSagashiForSwiftTests-Bridging-Header.h */,
 			);
 			name = "objective-c";
+			sourceTree = "<group>";
+		};
+		58663A1C19443E3600623397 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				58663A211944664400623397 /* _Cafe.h */,
+				58663A221944664400623397 /* _Cafe.m */,
+				58663A231944664400623397 /* Cafe.h */,
+				58663A241944664400623397 /* Cafe.m */,
+				58663A1D19443E6500623397 /* Cafe.xcdatamodeld */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		58FDAF89194C529C009CFAED /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				58FDAF8C194C52D8009CFAED /* MyUtil.swift */,
+			);
+			name = lib;
 			sourceTree = "<group>";
 		};
 		EE4CFD6B47B5441AA1A2C556 /* Frameworks */ = {
@@ -343,8 +378,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58663A1F19443E6500623397 /* Cafe.xcdatamodeld in Sources */,
+				58FDAF8D194C52D8009CFAED /* MyUtil.swift in Sources */,
 				586639CB19400A3800623397 /* ViewController.swift in Sources */,
 				586639C919400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodeld in Sources */,
+				58663A251944664400623397 /* _Cafe.m in Sources */,
+				58663A271944664400623397 /* Cafe.m in Sources */,
 				586639C619400A3800623397 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,6 +392,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58663A281944664400623397 /* Cafe.m in Sources */,
+				58663A261944664400623397 /* _Cafe.m in Sources */,
+				58663A2019443E6500623397 /* Cafe.xcdatamodeld in Sources */,
 				586639DC19400A3800623397 /* NeoCafeSagashiForSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +620,16 @@
 			);
 			currentVersion = 586639C819400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodel */;
 			path = NeoCafeSagashiForSwift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		58663A1D19443E6500623397 /* Cafe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				58663A1E19443E6500623397 /* Cafe.xcdatamodel */,
+			);
+			currentVersion = 58663A1E19443E6500623397 /* Cafe.xcdatamodel */;
+			path = Cafe.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
