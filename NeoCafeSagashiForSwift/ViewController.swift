@@ -13,9 +13,15 @@ import CoreLocation
 class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDelegate {
     
     
-    var calloutview: SMCalloutView?
+    var calloutview: SMCalloutView!
+    var emptyCalloutView:UIView!
     var lm: CLLocationManager!
-    let defaultRadius = 500
+    
+    var cafeObjects = []
+    var backupAry:Array<String> = []
+    
+    let defaultRadius:Int = 500
+    let CalloutYOffset:CGFloat = 10.0
     
     @IBOutlet var mapview : GMSMapView
     @IBOutlet var gadbnrview : GADBannerView
@@ -77,6 +83,8 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         let ud = NSUserDefaults.standardUserDefaults()
         ud.setObject(NSString(format:"%f", coordinate.latitude), forKey: "lat")
         ud.setObject(NSString(format:"%f", coordinate.longitude), forKey: "lng")
+        ud.setObject(NSString(format:"%f", defaultRadius), forKey: "distance")
+        searchcafe(coordinate.latitude,lng:coordinate.longitude,dist:Double(defaultRadius))
         
     }
     
@@ -89,9 +97,109 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         var lat2:Double = latlonAry[2]
         var lon2:Double = latlonAry[3]
         
+        
+        //条件句を作成して取得
         let condAry:Array<String> = createCondDistance(lat1,underLon: lon1,overLat: lat2,overLon: lon2)
         
+        let cond1:String = condAry[0]
+        let cond2:String = condAry[1]
+        
+        let condString = "\(cond1) and \(cond2)"
+        
+        var predicate:NSPredicate = NSPredicate(format:condString)
+        
+        cafeObjects = Cafe.MR_findAllWithPredicate(predicate);
+        
     }
+    
+    
+    
+    func setCafeAnnotation(){
+        
+        
+        //set pin
+        for var i=0;i < cafeObjects.count;++i {
+            if backupAry.count > 0{
+                
+                let searchstr = cafeObjects[i].store_name
+                
+                var backIndex = find(backupAry, searchstr)
+                if backIndex != nil {
+                    continue
+                }
+            }
+            backupAry.append(cafeObjects[i].store_name)
+            
+            var d_lat:Double = Double(cafeObjects[i].lat)
+            var d_lng:Double = Double(cafeObjects[i].lng)
+            
+            let cafeMarker:GMSMarker = GMSMarker()
+            cafeMarker.title = cafeObjects[i].store_name
+            cafeMarker.position = CLLocationCoordinate2DMake(d_lat,d_lng)
+            cafeMarker.appearAnimation = kGMSMarkerAnimationPop
+            cafeMarker.flat = true
+            cafeMarker.draggable = true
+            cafeMarker.groundAnchor = CGPointMake(0.5, 0.5)
+            cafeMarker.map = mapview
+            
+        }
+    }
+    
+    
+    func mapView(mapView:GMSMapView,markerInfoWindow marker:GMSMarker) -> UIView{
+        
+        let anchor:CLLocationCoordinate2D = marker.position
+        let point:CGPoint = mapView.projection.pointForCoordinate(anchor)
+        calloutview.title = marker.title
+        calloutview.calloutOffset = CGPointMake(0, -CalloutYOffset)
+        
+        calloutview.hidden = true
+        let calloutRect:CGRect = CGRect(origin:point,size:CGSizeZero)
+        
+        
+        
+        calloutview.presentCalloutFromRect(calloutRect,inView:mapView,constrainedToView:mapView,animated:true)
+        
+        
+        return emptyCalloutView
+    }
+    
+    
+    func mapView(mapView:GMSMapView,didTapAtCoordinate coordinate:CLLocationCoordinate2D) {
+        calloutview.hidden = true
+    }
+    
+
+    
+    func mapView(mapView:GMSMapView,didTapMarker marker:GMSMarker) -> Bool{
+        mapView.selectedMarker = marker
+        return true
+    }
+    
+    /**
+    *  地図の視点変更時（移動や縮尺変更）
+    *
+    *  @param map_view_ グーグルマップ
+    *  @param position_ 位置
+    */
+    func mapView(mapView:GMSMapView,didChangeCameraPosition position_:GMSCameraPosition) {
+        calloutview.hidden = true
+        let zoom:Double = Double(position_.zoom)
+        let lat:Double = Double(position_.target.latitude)
+        let lng:Double = Double(position_.target.longitude)
+        let distance:Double = Double(zoom)*500
+        
+        let ud = NSUserDefaults.standardUserDefaults()
+        ud.setObject(NSString(format:"%f", lat), forKey: "lat")
+        ud.setObject(NSString(format:"%f", lng), forKey: "lng")
+        ud.setObject(NSString(format:"%f", distance), forKey: "distance")
+        
+        //あとはsearchcafeを呼び出すのみ
+        searchcafe(lat,lng:lng,dist:distance)
+    }
+    
+    
+
     
     
     func createCondDistance(underLat:Double,underLon:Double,overLat:Double,overLon:Double) -> Array<String>{
