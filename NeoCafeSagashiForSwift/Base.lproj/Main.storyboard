@@ -80,5 +80,52 @@
             </objects>
             <point key="canvasLocation" x="340" y="904"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="hc8-rE-IV6">
+            <objects>
+                <viewController storyboardIdentifier="web_board" id="Clf-7m-qyL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XRO-tL-5Am"/>
+                        <viewControllerLayoutGuide type="bottom" id="RHR-4Y-EDv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YxQ-tF-wPh">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9et-tP-kHh">
+                                <rect key="frame" x="0.0" y="50" width="480" height="386"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVd-xb-PyV" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="szh-Iz-gTI">
+                                <rect key="frame" x="0.0" y="436" width="480" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Mxb-sH-Pwx"/>
+                                    <barButtonItem title="＜" id="tcb-K9-aDL"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="TLr-aJ-ptx"/>
+                                    <barButtonItem title=">" id="zsj-7X-TDd"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="V5B-2U-1Jd"/>
+                                    <barButtonItem systemItem="refresh" id="OuT-4y-M9T"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1bA-jz-NmB"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RVd-xb-PyV" firstAttribute="top" secondItem="YxQ-tF-wPh" secondAttribute="top" id="CTU-ge-3ME"/>
+                            <constraint firstItem="szh-Iz-gTI" firstAttribute="top" secondItem="9et-tP-kHh" secondAttribute="bottom" id="MPD-aS-58y"/>
+                            <constraint firstItem="RVd-xb-PyV" firstAttribute="leading" secondItem="YxQ-tF-wPh" secondAttribute="leading" id="glf-97-CHM"/>
+                            <constraint firstItem="9et-tP-kHh" firstAttribute="top" secondItem="RVd-xb-PyV" secondAttribute="bottom" id="gmS-75-uza"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qjw-QU-8Et" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="1221"/>
+        </scene>
     </scenes>
 </document>

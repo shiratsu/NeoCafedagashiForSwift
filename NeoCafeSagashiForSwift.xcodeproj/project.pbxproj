@@ -29,6 +29,8 @@
 		58663A271944664400623397 /* Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58663A241944664400623397 /* Cafe.m */; };
 		58663A281944664400623397 /* Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58663A241944664400623397 /* Cafe.m */; };
 		5880028F19565348009E94DA /* NeoCafeSagashiForSwift.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5880028E19565348009E94DA /* NeoCafeSagashiForSwift.sqlite */; };
+		588002981956FFA7009E94DA /* Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588002961956FFA7009E94DA /* Web.swift */; };
+		588002991956FFA7009E94DA /* Web.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588002971956FFA7009E94DA /* Web.xib */; };
 		58FDAF8D194C52D8009CFAED /* MyUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FDAF8C194C52D8009CFAED /* MyUtil.swift */; };
 		D427FB06C0A346A5B7BE124D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8818A8D7BC05413E8656EFF3 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -85,6 +87,8 @@
 		58663A231944664400623397 /* Cafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cafe.h; path = Model/Cafe.h; sourceTree = "<group>"; };
 		58663A241944664400623397 /* Cafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cafe.m; path = Model/Cafe.m; sourceTree = "<group>"; };
 		5880028E19565348009E94DA /* NeoCafeSagashiForSwift.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = NeoCafeSagashiForSwift.sqlite; path = ../NeoCafeSagashiForSwift/NeoCafeSagashiForSwift.sqlite; sourceTree = "<group>"; };
+		588002961956FFA7009E94DA /* Web.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Web.swift; sourceTree = "<group>"; };
+		588002971956FFA7009E94DA /* Web.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Web.xib; sourceTree = "<group>"; };
 		58FDAF8C194C52D8009CFAED /* MyUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtil.swift; sourceTree = "<group>"; };
 		8818A8D7BC05413E8656EFF3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,6 +156,8 @@
 				586639CF19400A3800623397 /* Images.xcassets */,
 				586639C719400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodeld */,
 				586639C319400A3800623397 /* Supporting Files */,
+				588002961956FFA7009E94DA /* Web.swift */,
+				588002971956FFA7009E94DA /* Web.xib */,
 			);
 			path = NeoCafeSagashiForSwift;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 			files = (
 				586639CE19400A3800623397 /* Main.storyboard in Resources */,
 				586639D019400A3800623397 /* Images.xcassets in Resources */,
+				588002991956FFA7009E94DA /* Web.xib in Resources */,
 				5880028F19565348009E94DA /* NeoCafeSagashiForSwift.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,6 +391,7 @@
 			files = (
 				58663A1F19443E6500623397 /* Cafe.xcdatamodeld in Sources */,
 				58FDAF8D194C52D8009CFAED /* MyUtil.swift in Sources */,
+				588002981956FFA7009E94DA /* Web.swift in Sources */,
 				586639CB19400A3800623397 /* ViewController.swift in Sources */,
 				586639C919400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodeld in Sources */,
 				58663A251944664400623397 /* _Cafe.m in Sources */,
