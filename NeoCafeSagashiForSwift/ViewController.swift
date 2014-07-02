@@ -31,8 +31,14 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         super.viewDidLoad()
         
         self.navigationItem.title = "カフェ探し"
-        let leftbtn: UIBarButtonItem = UIBarButtonItem()
         
+        calloutview = SMCalloutView()
+        
+        let btn:UIButton? = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as? UIButton;
+        btn!.addTarget(self, action: "calloutAccessoryButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside);
+        calloutview.rightAccessoryView = btn
+        
+        emptyCalloutView = UIView(frame:CGRectZero);
         
         gadbnrview.adUnitID = "ca-app-pub-8789201169323567/1907251504";
         gadbnrview.rootViewController = self
@@ -110,6 +116,8 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         
         cafeObjects = Cafe.MR_findAllWithPredicate(predicate);
         
+        setCafeAnnotation()
+        
     }
     
     
@@ -133,10 +141,13 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
             var d_lat:Double = Double(cafeObjects[i].lat)
             var d_lng:Double = Double(cafeObjects[i].lng)
             
+            let markerInfo:Dictionary<String, String> = ["url" : cafeObjects[i].url];
+            
             let cafeMarker:GMSMarker = GMSMarker()
             cafeMarker.title = cafeObjects[i].store_name
             cafeMarker.position = CLLocationCoordinate2DMake(d_lat,d_lng)
             cafeMarker.appearAnimation = kGMSMarkerAnimationPop
+            cafeMarker.userData = markerInfo
             cafeMarker.flat = true
             cafeMarker.draggable = true
             cafeMarker.groundAnchor = CGPointMake(0.5, 0.5)
@@ -198,6 +209,23 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         searchcafe(lat,lng:lng,dist:distance)
     }
     
+    func calloutAccessoryButtonTapped(sender:AnyObject){
+        
+        if mapview.selectedMarker {
+            let marker:GMSMarker = mapview.selectedMarker
+            let userdata:Dictionary<String, String> = marker.userData as Dictionary<String, String>
+            let url:String = userdata["url"]!
+            
+            let web:Web = self.storyboard.instantiateViewControllerWithIdentifier("web_board") as Web
+            
+            self.navigationController.pushViewController(web, animated: true)
+            
+            
+            
+        }
+        
+    }
+    
     
 
     
@@ -213,11 +241,28 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         //NSLog("ccc")
     }
     
+    //戻ってきたとき
+    override func viewWillAppear(animated: Bool){
+        
+        let ud = NSUserDefaults.standardUserDefaults()
+        
+    }
     
+    //非表示になる直前
+    override func viewWillDisappear(animated:Bool) {
+        
+        mapview.clear()
+        cafeObjects = []
+        backupAry = []
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        mapview.clear()
+        cafeObjects = []
+        backupAry = []
     }
     
     

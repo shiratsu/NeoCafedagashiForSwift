@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="340" y="904"/>
         </scene>
-        <!--View Controller-->
+        <!--Web-->
         <scene sceneID="hc8-rE-IV6">
             <objects>
-                <viewController storyboardIdentifier="web_board" id="Clf-7m-qyL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="web_board" id="Clf-7m-qyL" customClass="Web" customModule="NeoCafeSagashiForSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XRO-tL-5Am"/>
                         <viewControllerLayoutGuide type="bottom" id="RHR-4Y-EDv"/>
@@ -95,6 +95,9 @@
                             <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9et-tP-kHh">
                                 <rect key="frame" x="0.0" y="50" width="480" height="386"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Clf-7m-qyL" id="8nF-jq-Fop"/>
+                                </connections>
                             </webView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVd-xb-PyV" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="50"/>
@@ -104,11 +107,23 @@
                                 <rect key="frame" x="0.0" y="436" width="480" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Mxb-sH-Pwx"/>
-                                    <barButtonItem title="＜" id="tcb-K9-aDL"/>
+                                    <barButtonItem title="＜" id="tcb-K9-aDL">
+                                        <connections>
+                                            <action selector="back:" destination="Clf-7m-qyL" id="EXh-ch-iFY"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="TLr-aJ-ptx"/>
-                                    <barButtonItem title=">" id="zsj-7X-TDd"/>
+                                    <barButtonItem title=">" id="zsj-7X-TDd">
+                                        <connections>
+                                            <action selector="next:" destination="Clf-7m-qyL" id="Lab-mM-7Pf"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="V5B-2U-1Jd"/>
-                                    <barButtonItem systemItem="refresh" id="OuT-4y-M9T"/>
+                                    <barButtonItem systemItem="refresh" id="OuT-4y-M9T">
+                                        <connections>
+                                            <action selector="reload:" destination="Clf-7m-qyL" id="RzR-32-AqR"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1bA-jz-NmB"/>
                                 </items>
                             </toolbar>
@@ -122,6 +137,10 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="bannerview" destination="RVd-xb-PyV" id="l1C-Zd-yC4"/>
+                        <outlet property="webview" destination="9et-tP-kHh" id="j5K-oU-jgz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qjw-QU-8Et" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

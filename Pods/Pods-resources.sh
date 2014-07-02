@@ -42,6 +42,8 @@ install_resource()
   esac
 }
 install_resource "Google-Maps-iOS-SDK/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
+install_resource "KINWebBrowser/Assets/backbutton@2x.png"
+install_resource "KINWebBrowser/Assets/forwardbutton@2x.png"
 install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

@@ -11,3 +11,4 @@
 #import "GoogleMapAPIKey.h"
 #import "CoreData+MagicalRecord.h"
 #import "Cafe.h"
+#import <KINWebBrowser/KINWebBrowserViewController.h>

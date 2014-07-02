@@ -8,8 +8,15 @@
 
 import UIKit
 
-class Web: UIViewController {
+class Web: UIViewController,UIWebViewDelegate {
 
+    @IBOutlet var webview: UIWebView
+    
+    @IBOutlet var bannerview: GADBannerView
+    
+    var serviceUrl:String?
+    
+    
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
@@ -17,8 +24,26 @@ class Web: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let url:NSURL = NSURL(string: serviceUrl)
+        let req = NSURLRequest(URL: url)
+        webview.loadRequest(req)
+        
+        bannerview.adUnitID = "ca-app-pub-8789201169323567/1907251504";
+        bannerview.rootViewController = self
+        
+        self.view.addSubview(bannerview);
+        let request:GADRequest = GADRequest();
+        bannerview.loadRequest(request)
 
         // Do any additional setup after loading the view.
+    }
+    func webViewDidStartLoad(webView: UIWebView!){
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView!){
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +51,15 @@ class Web: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func back(sender: AnyObject) {
+        webview.goBack()
+    }
+    @IBAction func next(sender: AnyObject) {
+        webview.goForward()
+    }
+    @IBAction func reload(sender: AnyObject) {
+        webview.reload()
+    }
 
     /*
     // #pragma mark - Navigation

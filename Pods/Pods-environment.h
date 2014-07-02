@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_Google_Maps_iOS_SDK 8
 #define COCOAPODS_VERSION_PATCH_Google_Maps_iOS_SDK 1
 
+// KINWebBrowser
+#define COCOAPODS_POD_AVAILABLE_KINWebBrowser
+#define COCOAPODS_VERSION_MAJOR_KINWebBrowser 0
+#define COCOAPODS_VERSION_MINOR_KINWebBrowser 2
+#define COCOAPODS_VERSION_PATCH_KINWebBrowser 4
+
 // MagicalRecord
 #define COCOAPODS_POD_AVAILABLE_MagicalRecord
 #define COCOAPODS_VERSION_MAJOR_MagicalRecord 2
