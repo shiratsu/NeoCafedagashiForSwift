@@ -60,7 +60,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         //lm.startUpdatingLocation()
         startLocation()
         
-        
+        //tmpfunc()
         
     }
 
@@ -74,6 +74,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     }
     
     @IBAction func reloadLocation(sender : AnyObject) {
+        NSLog("kkkkkkk")
         
         lm.startUpdatingLocation()
     }
@@ -111,11 +112,14 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         let cond2:String = condAry[1]
         
         let condString = "\(cond1) and \(cond2)"
-        
+        NSLog("%@",condString)
         var predicate:NSPredicate = NSPredicate(format:condString)
         
+        //cafeObjects = Cafe.MR_findAll();
         cafeObjects = Cafe.MR_findAllWithPredicate(predicate);
         
+        NSLog("===============================================================================================")
+        NSLog("%@",cafeObjects)
         setCafeAnnotation()
         
     }
@@ -204,7 +208,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         ud.setObject(NSString(format:"%f", lat), forKey: "lat")
         ud.setObject(NSString(format:"%f", lng), forKey: "lng")
         ud.setObject(NSString(format:"%f", distance), forKey: "distance")
-        
+        //tmpfunc()
         //あとはsearchcafeを呼び出すのみ
         searchcafe(lat,lng:lng,dist:distance)
     }
@@ -233,7 +237,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     func createCondDistance(underLat:Double,underLon:Double,overLat:Double,overLon:Double) -> Array<String>{
         
         let latStr:String = "lat BETWEEN {\(String(underLat)),\(String(overLat))}"
-        let lonStr:String = "lon BETWEEN {\(String(underLon)),\(String(overLon))}"
+        let lonStr:String = "lng BETWEEN {\(String(underLon)),\(String(overLon))}"
         return [latStr,lonStr]
     }
     
@@ -265,6 +269,20 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         backupAry = []
     }
     
+    func tmpfunc(){
+        let sampleTodo: Cafe = Cafe.MR_createEntity() as Cafe
+        sampleTodo.address = "test"
+        sampleTodo.id = 1
+        sampleTodo.lat = 130.0313
+        sampleTodo.lng = 130.0313
+        sampleTodo.created_at = NSDate.date()
+        sampleTodo.updated_at = NSDate.date()
+        sampleTodo.store_name = "test"
+        sampleTodo.url = "test"
+        sampleTodo.log_image = "test"
+
+        sampleTodo.managedObjectContext.MR_saveToPersistentStoreAndWait()
+    }
     
 
 

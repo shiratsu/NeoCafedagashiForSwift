@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58413C92196989170074687F /* NeoCafeSagashiForSwift.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58413C91196989170074687F /* NeoCafeSagashiForSwift.sqlite */; };
 		586639C619400A3800623397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586639C519400A3800623397 /* AppDelegate.swift */; };
 		586639C919400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 586639C719400A3800623397 /* NeoCafeSagashiForSwift.xcdatamodeld */; };
 		586639CB19400A3800623397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586639CA19400A3800623397 /* ViewController.swift */; };
@@ -28,7 +29,6 @@
 		58663A261944664400623397 /* _Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58663A221944664400623397 /* _Cafe.m */; };
 		58663A271944664400623397 /* Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58663A241944664400623397 /* Cafe.m */; };
 		58663A281944664400623397 /* Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 58663A241944664400623397 /* Cafe.m */; };
-		5880028F19565348009E94DA /* NeoCafeSagashiForSwift.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5880028E19565348009E94DA /* NeoCafeSagashiForSwift.sqlite */; };
 		588002981956FFA7009E94DA /* Web.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588002961956FFA7009E94DA /* Web.swift */; };
 		58FDAF8D194C52D8009CFAED /* MyUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FDAF8C194C52D8009CFAED /* MyUtil.swift */; };
 		D427FB06C0A346A5B7BE124D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8818A8D7BC05413E8656EFF3 /* libPods.a */; };
@@ -46,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		21A060D7C819460B8DBD4F5A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		58413C91196989170074687F /* NeoCafeSagashiForSwift.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeoCafeSagashiForSwift.sqlite; sourceTree = "<group>"; };
 		586639C019400A3800623397 /* NeoCafeSagashiForSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeoCafeSagashiForSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586639C419400A3800623397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		586639C519400A3800623397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		58663A221944664400623397 /* _Cafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Cafe.m; path = Model/_Cafe.m; sourceTree = "<group>"; };
 		58663A231944664400623397 /* Cafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cafe.h; path = Model/Cafe.h; sourceTree = "<group>"; };
 		58663A241944664400623397 /* Cafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cafe.m; path = Model/Cafe.m; sourceTree = "<group>"; };
-		5880028E19565348009E94DA /* NeoCafeSagashiForSwift.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = NeoCafeSagashiForSwift.sqlite; path = ../NeoCafeSagashiForSwift/NeoCafeSagashiForSwift.sqlite; sourceTree = "<group>"; };
 		588002961956FFA7009E94DA /* Web.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Web.swift; sourceTree = "<group>"; };
 		58FDAF8C194C52D8009CFAED /* MyUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtil.swift; sourceTree = "<group>"; };
 		8818A8D7BC05413E8656EFF3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +148,7 @@
 		586639C219400A3800623397 /* NeoCafeSagashiForSwift */ = {
 			isa = PBXGroup;
 			children = (
+				58413C91196989170074687F /* NeoCafeSagashiForSwift.sqlite */,
 				586639C519400A3800623397 /* AppDelegate.swift */,
 				586639CA19400A3800623397 /* ViewController.swift */,
 				586639CC19400A3800623397 /* Main.storyboard */,
@@ -179,7 +180,6 @@
 		586639D919400A3800623397 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5880028E19565348009E94DA /* NeoCafeSagashiForSwift.sqlite */,
 				586639DA19400A3800623397 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -334,7 +334,7 @@
 			files = (
 				586639CE19400A3800623397 /* Main.storyboard in Resources */,
 				586639D019400A3800623397 /* Images.xcassets in Resources */,
-				5880028F19565348009E94DA /* NeoCafeSagashiForSwift.sqlite in Resources */,
+				58413C92196989170074687F /* NeoCafeSagashiForSwift.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

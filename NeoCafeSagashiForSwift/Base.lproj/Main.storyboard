@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7nh-y1-FEQ" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nh-y1-FEQ" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="430" width="480" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -35,6 +35,8 @@
                             <constraint firstAttribute="trailing" secondItem="7nh-y1-FEQ" secondAttribute="trailing" id="SCW-Q8-85p"/>
                             <constraint firstItem="ghV-iR-eQP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="63" id="WFa-Aq-MEi"/>
                             <constraint firstAttribute="trailing" secondItem="7nh-y1-FEQ" secondAttribute="trailing" id="eCa-20-iRY"/>
+                            <constraint firstItem="7nh-y1-FEQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ptL-Zv-azu"/>
+                            <constraint firstAttribute="trailing" secondItem="7nh-y1-FEQ" secondAttribute="trailing" id="vr4-ku-BHG"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -42,11 +44,6 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="FDf-9L-nMu">
                             <connections>
                                 <action selector="reloadLocation:" destination="BYZ-38-t0r" id="bpA-hU-Xre"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4ks-Uy-gEA">
-                            <connections>
-                                <action selector="openMenu:" destination="BYZ-38-t0r" id="RpN-dL-jJs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

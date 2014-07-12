@@ -14,6 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
     var services_: AnyObject?
+    
+    let sqliteFileName = "NeoCafeSagashiForSwift.sqlite"
+    let sqliteFileName2 = "NeoCafeSagashiForSwift2.sqlite"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
@@ -30,7 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(gApiKey)
         services_ = GMSServices.sharedServices()
         
-        MagicalRecord.setupCoreDataStackWithAutoMigratingSqliteStoreNamed("NeoCafeSagashiForSwift.sqlite")
+        copyDefaultStoreIfNecessary()
+        //MagicalRecord.setLogLevel(MagicalRecordLogLevelVerbose)
+        MagicalRecord.setupCoreDataStackWithStoreNamed(sqliteFileName)
         
         return true
     }
@@ -57,6 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+        MagicalRecord.cleanUp()
     }
 
     func saveContext () {
@@ -102,23 +108,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Returns the persistent store coordinator for the application.
     // If the coordinator doesn't already exist, it is created and the application's store added to it.
     var persistentStoreCoordinator: NSPersistentStoreCoordinator {
+    
+    
         if !_persistentStoreCoordinator {
             let storeURL = self.applicationDocumentsDirectory.URLByAppendingPathComponent("NeoCafeSagashiForSwift.sqlite")
-            
-            
-            //ここに初期値コピーを書くっぽい
-//            var fileManager:NSFileManager = NSFileManager.defaultManager()
-//            
-//            if !fileManager.fileExistsAtPath(storeURL.path) {
-//                var defaultStoreURL:NSURL = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("NeoCafeSagashiForSwift.sqlite",ofType:"sqlite"))
-//                
-//                if defaultStoreURL != nil {
-//                    fileManager.copyItemAtURL(defaultStoreURL, toURL:storeURL, error:nil)
-//                }
-//                
-//                
-//            }
-            
             
             var error: NSError? = nil
             _persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
@@ -160,6 +153,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var applicationDocumentsDirectory: NSURL {
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.endIndex-1] as NSURL
+    }
+    
+    func copyDefaultStoreIfNecessary(){
+        var fileManager:NSFileManager = NSFileManager.defaultManager()
+        
+        var storeUrl:NSURL = NSPersistentStore.MR_urlForStoreName(sqliteFileName)
+        NSLog("storeurl %@",storeUrl.path)
+        if !fileManager.fileExistsAtPath(storeUrl.path) {
+            
+            var defaultStorePath = NSBundle.mainBundle().pathForResource(sqliteFileName.stringByDeletingPathExtension, ofType:sqliteFileName.pathExtension)
+            NSLog("defaultStorePath %@",defaultStorePath)
+            if defaultStorePath != nil
+            {
+                var copyerror:NSError?
+                let success =  fileManager.copyItemAtPath(defaultStorePath, toPath:storeUrl.path, error:&copyerror)
+                
+                NSLog("---------------------------------------")
+                if !success
+                {
+                    NSLog("---------------------------------------")
+                    NSLog("%@",copyerror!);
+                    NSLog("---------------------------------------")
+                }
+            }
+        }
     }
 
 }
