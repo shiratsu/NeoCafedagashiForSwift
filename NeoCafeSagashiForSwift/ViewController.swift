@@ -23,8 +23,8 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     let defaultRadius:Int = 500
     let CalloutYOffset:CGFloat = 10.0
     
-    @IBOutlet var mapview : GMSMapView
-    @IBOutlet var gadbnrview : GADBannerView
+    @IBOutlet var mapview : GMSMapView!
+    @IBOutlet var gadbnrview : GADBannerView!
                             
     
     override func viewDidLoad() {
@@ -74,7 +74,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     }
     
     @IBAction func reloadLocation(sender : AnyObject) {
-        NSLog("kkkkkkk")
+        //NSLog("kkkkkkk")
         
         lm.startUpdatingLocation()
     }
@@ -82,10 +82,14 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!){
-        //NSLog("bbb")
+        NSLog("******************************************************************************************************")
+        NSLog("searchcafe")
         var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude:newLocation.coordinate.latitude,longitude:newLocation.coordinate.longitude)
         var now :GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(coordinate.latitude,longitude:coordinate.longitude,zoom:17)
         mapview.camera = now
+        
+        println(coordinate.latitude)
+        println(coordinate.longitude)
         
         let ud = NSUserDefaults.standardUserDefaults()
         ud.setObject(NSString(format:"%f", coordinate.latitude), forKey: "lat")
@@ -104,6 +108,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         var lat2:Double = latlonAry[2]
         var lon2:Double = latlonAry[3]
         
+        NSLog("******************************************************************************************************")
         
         //条件句を作成して取得
         let condAry:Array<String> = createCondDistance(lat1,underLon: lon1,overLat: lat2,overLon: lon2)
@@ -112,14 +117,14 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         let cond2:String = condAry[1]
         
         let condString = "\(cond1) and \(cond2)"
-        NSLog("%@",condString)
+        //NSLog("%@",condString)
         var predicate:NSPredicate = NSPredicate(format:condString)
         
         //cafeObjects = Cafe.MR_findAll();
         cafeObjects = Cafe.MR_findAllWithPredicate(predicate);
         
-        NSLog("===============================================================================================")
-        NSLog("%@",cafeObjects)
+//        NSLog("===============================================================================================")
+NSLog("%@",cafeObjects)
         setCafeAnnotation()
         
     }
@@ -197,7 +202,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     *  @param map_view_ グーグルマップ
     *  @param position_ 位置
     */
-    func mapView(mapView:GMSMapView,didChangeCameraPosition position_:GMSCameraPosition) {
+    func mapView(mapView:GMSMapView,idleAtCameraPosition position_:GMSCameraPosition) {
         calloutview.hidden = true
         let zoom:Double = Double(position_.zoom)
         let lat:Double = Double(position_.target.latitude)
@@ -236,13 +241,13 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     
     func createCondDistance(underLat:Double,underLon:Double,overLat:Double,overLon:Double) -> Array<String>{
         
-        let latStr:String = "lat BETWEEN {\(String(underLat)),\(String(overLat))}"
-        let lonStr:String = "lng BETWEEN {\(String(underLon)),\(String(overLon))}"
+        let latStr:String = "lat BETWEEN {\(underLat),\(overLat)}"
+        let lonStr:String = "lng BETWEEN {\(underLon),\(overLon)}"
         return [latStr,lonStr]
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!){
-        //NSLog("ccc")
+        NSLog("cccccccccccccccccccccccccccccccccccccccccccccccccccccc")
     }
     
     //戻ってきたとき

@@ -10,9 +10,9 @@ import UIKit
 
 class Web: UIViewController,UIWebViewDelegate {
 
-    @IBOutlet var webview: UIWebView
+    @IBOutlet var webview: UIWebView!
     
-    @IBOutlet var bannerview: GADBannerView
+    @IBOutlet var bannerview: GADBannerView!
     
     var serviceUrl:String?
     

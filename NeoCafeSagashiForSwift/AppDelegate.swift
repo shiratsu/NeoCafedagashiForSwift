@@ -16,8 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var services_: AnyObject?
     
     let sqliteFileName = "NeoCafeSagashiForSwift.sqlite"
-    let sqliteFileName2 = "NeoCafeSagashiForSwift2.sqlite"
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
         let gApiKey: String? = "AIzaSyAFJf4BYgUQcDHx-btINI1dRQL5FwA5NTA"
@@ -162,12 +161,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog("storeurl %@",storeUrl.path)
         if !fileManager.fileExistsAtPath(storeUrl.path) {
             
-            var defaultStorePath = NSBundle.mainBundle().pathForResource(sqliteFileName.stringByDeletingPathExtension, ofType:sqliteFileName.pathExtension)
+            var pathToStore:NSURL! = storeUrl.URLByDeletingLastPathComponent
+            var error:NSError? = nil
+            
+            if !fileManager.createDirectoryAtPath(pathToStore.path, withIntermediateDirectories: true, attributes: nil, error: &error){
+                NSLog("---------------------------------------")
+                println(error)
+                NSLog("---------------------------------------")
+            }
+            
+            var storeUrl_shm:NSURL = pathToStore.URLByAppendingPathComponent("NeoCafeSagashiForSwift.sqlite-shm")
+            var storeUrl_wal:NSURL = pathToStore.URLByAppendingPathComponent("NeoCafeSagashiForSwift.sqlite-wal")
+            
+            var defaultStorePath = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("NeoCafeSagashiForSwift", ofType:"sqlite"))
+            var defaultStorePath_shm = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("NeoCafeSagashiForSwift", ofType:"sqlite-shm"))
+            var defaultStorePath_wal = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("NeoCafeSagashiForSwift", ofType:"sqlite-wal"))
+            
             NSLog("defaultStorePath %@",defaultStorePath)
             if defaultStorePath != nil
             {
                 var copyerror:NSError?
-                let success =  fileManager.copyItemAtPath(defaultStorePath, toPath:storeUrl.path, error:&copyerror)
+                let success =  fileManager.copyItemAtURL(defaultStorePath, toURL:storeUrl, error:&copyerror)
+                
+                NSLog("---------------------------------------")
+                if !success
+                {
+                    NSLog("---------------------------------------")
+                    NSLog("%@",copyerror!);
+                    NSLog("---------------------------------------")
+                }
+            }
+            
+            if defaultStorePath_shm != nil
+            {
+                var copyerror:NSError?
+                let success =  fileManager.copyItemAtURL(defaultStorePath_shm, toURL:storeUrl_shm, error:&copyerror)
+                
+                NSLog("---------------------------------------")
+                if !success
+                {
+                    NSLog("---------------------------------------")
+                    NSLog("%@",copyerror!);
+                    NSLog("---------------------------------------")
+                }
+            }
+            
+            if defaultStorePath_wal != nil
+            {
+                var copyerror:NSError?
+                let success =  fileManager.copyItemAtURL(defaultStorePath_wal, toURL:storeUrl_wal, error:&copyerror)
                 
                 NSLog("---------------------------------------")
                 if !success
