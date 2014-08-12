@@ -165,9 +165,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var error:NSError? = nil
             
             if !fileManager.createDirectoryAtPath(pathToStore.path, withIntermediateDirectories: true, attributes: nil, error: &error){
-                NSLog("---------------------------------------")
+                //NSLog("---------------------------------------")
                 println(error)
-                NSLog("---------------------------------------")
+                //NSLog("---------------------------------------")
             }
             
             var storeUrl_shm:NSURL = pathToStore.URLByAppendingPathComponent("NeoCafeSagashiForSwift.sqlite-shm")
@@ -177,7 +177,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var defaultStorePath_shm = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("NeoCafeSagashiForSwift", ofType:"sqlite-shm"))
             var defaultStorePath_wal = NSURL.fileURLWithPath(NSBundle.mainBundle().pathForResource("NeoCafeSagashiForSwift", ofType:"sqlite-wal"))
             
-            NSLog("defaultStorePath %@",defaultStorePath)
+            //NSLog("defaultStorePath %@",defaultStorePath)
             if defaultStorePath != nil
             {
                 var copyerror:NSError?

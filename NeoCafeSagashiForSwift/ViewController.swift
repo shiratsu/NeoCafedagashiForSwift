@@ -82,8 +82,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!){
-        NSLog("******************************************************************************************************")
-        NSLog("searchcafe")
+        
         var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude:newLocation.coordinate.latitude,longitude:newLocation.coordinate.longitude)
         var now :GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(coordinate.latitude,longitude:coordinate.longitude,zoom:17)
         mapview.camera = now
@@ -108,7 +107,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         var lat2:Double = latlonAry[2]
         var lon2:Double = latlonAry[3]
         
-        NSLog("******************************************************************************************************")
+        
         
         //条件句を作成して取得
         let condAry:Array<String> = createCondDistance(lat1,underLon: lon1,overLat: lat2,overLon: lon2)
@@ -124,7 +123,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         cafeObjects = Cafe.MR_findAllWithPredicate(predicate);
         
 //        NSLog("===============================================================================================")
-NSLog("%@",cafeObjects)
+//NSLog("%@",cafeObjects)
         setCafeAnnotation()
         
     }
@@ -163,6 +162,11 @@ NSLog("%@",cafeObjects)
             cafeMarker.map = mapview
             
         }
+        
+        if backupAry.count > 500{
+            backupAry = []
+        }
+        
     }
     
     
@@ -247,7 +251,7 @@ NSLog("%@",cafeObjects)
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!){
-        NSLog("cccccccccccccccccccccccccccccccccccccccccccccccccccccc")
+        
     }
     
     //戻ってきたとき
