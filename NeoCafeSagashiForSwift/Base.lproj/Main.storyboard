@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ajJ-zJ-lqn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ajJ-zJ-lqn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -89,18 +90,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9et-tP-kHh">
-                                <rect key="frame" x="0.0" y="50" width="480" height="386"/>
+                                <rect key="frame" x="0.0" y="0.0" width="605" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="Clf-7m-qyL" id="8nF-jq-Fop"/>
                                 </connections>
                             </webView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVd-xb-PyV" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="szh-Iz-gTI">
-                                <rect key="frame" x="0.0" y="436" width="480" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szh-Iz-gTI">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Mxb-sH-Pwx"/>
                                     <barButtonItem title="＜" id="tcb-K9-aDL">
@@ -123,13 +120,21 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1bA-jz-NmB"/>
                                 </items>
                             </toolbar>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVd-xb-PyV" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="505" width="600" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RVd-xb-PyV" firstAttribute="top" secondItem="YxQ-tF-wPh" secondAttribute="top" id="CTU-ge-3ME"/>
-                            <constraint firstItem="szh-Iz-gTI" firstAttribute="top" secondItem="9et-tP-kHh" secondAttribute="bottom" id="MPD-aS-58y"/>
-                            <constraint firstItem="RVd-xb-PyV" firstAttribute="leading" secondItem="YxQ-tF-wPh" secondAttribute="leading" id="glf-97-CHM"/>
-                            <constraint firstItem="9et-tP-kHh" firstAttribute="top" secondItem="RVd-xb-PyV" secondAttribute="bottom" id="gmS-75-uza"/>
+                            <constraint firstAttribute="trailing" secondItem="szh-Iz-gTI" secondAttribute="trailing" id="4G7-LZ-9bj"/>
+                            <constraint firstItem="9et-tP-kHh" firstAttribute="leading" secondItem="YxQ-tF-wPh" secondAttribute="leadingMargin" id="IyF-Wc-hh6"/>
+                            <constraint firstItem="RVd-xb-PyV" firstAttribute="leading" secondItem="YxQ-tF-wPh" secondAttribute="leadingMargin" id="MoK-2O-u4c"/>
+                            <constraint firstItem="RVd-xb-PyV" firstAttribute="top" secondItem="YxQ-tF-wPh" secondAttribute="topMargin" id="RtC-ZH-R15"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RVd-xb-PyV" secondAttribute="trailing" id="S7a-kf-RE7"/>
+                            <constraint firstItem="szh-Iz-gTI" firstAttribute="leading" secondItem="YxQ-tF-wPh" secondAttribute="leading" id="kRV-hG-SM3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9et-tP-kHh" secondAttribute="trailing" id="qCd-rH-aSb"/>
+                            <constraint firstItem="RHR-4Y-EDv" firstAttribute="top" secondItem="szh-Iz-gTI" secondAttribute="bottom" id="rY1-s2-BMa"/>
                         </constraints>
                     </view>
                     <connections>

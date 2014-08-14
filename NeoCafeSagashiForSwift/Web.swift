@@ -16,8 +16,12 @@ class Web: UIViewController,UIWebViewDelegate {
     
     var serviceUrl:String?
     
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
     
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
     }
@@ -44,6 +48,10 @@ class Web: UIViewController,UIWebViewDelegate {
     
     func webViewDidFinishLoad(webView: UIWebView!){
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+    func webView(webView: UIWebView!, didFailLoadWithError error: NSError!){
+        println("Load ERROR")
     }
 
     override func didReceiveMemoryWarning() {

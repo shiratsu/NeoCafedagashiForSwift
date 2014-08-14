@@ -54,7 +54,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         
         lm = CLLocationManager()
         lm.delegate = self
-        lm.desiredAccuracy = kCLLocationAccuracyBest
+        lm.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         lm.requestAlwaysAuthorization()
         lm.distanceFilter = 300
         //lm.startUpdatingLocation()
@@ -83,6 +83,8 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     
     func locationManager(manager: CLLocationManager!, didUpdateToLocation newLocation: CLLocation!, fromLocation oldLocation: CLLocation!){
         
+        stopLocation()
+        
         var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude:newLocation.coordinate.latitude,longitude:newLocation.coordinate.longitude)
         var now :GMSCameraPosition = GMSCameraPosition.cameraWithLatitude(coordinate.latitude,longitude:coordinate.longitude,zoom:17)
         mapview.camera = now
@@ -99,14 +101,13 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     }
     
     func searchcafe(lat:Double,lng:Double,dist:Double){
-        
+        println("dist:\(dist)")
         let latlonAry:Array<Double> = MyUtil.feedCalcLatLon(lat,longitude: lng,distance: dist)
         
         var lat1:Double = latlonAry[0]
         var lon1:Double = latlonAry[1]
         var lat2:Double = latlonAry[2]
         var lon2:Double = latlonAry[3]
-        
         
         
         //条件句を作成して取得
@@ -116,12 +117,12 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         let cond2:String = condAry[1]
         
         let condString = "\(cond1) and \(cond2)"
-        //NSLog("%@",condString)
+        NSLog("%@",condString)
         var predicate:NSPredicate = NSPredicate(format:condString)
         
         //cafeObjects = Cafe.MR_findAll();
         cafeObjects = Cafe.MR_findAllWithPredicate(predicate);
-        
+        println(cafeObjects.count)
 //        NSLog("===============================================================================================")
 //NSLog("%@",cafeObjects)
         setCafeAnnotation()
@@ -132,6 +133,8 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
     
     func setCafeAnnotation(){
         
+        
+        let pinImg:UIImage = UIImage(named:"pin1.png");
         
         //set pin
         for var i=0;i < cafeObjects.count;++i {
@@ -152,6 +155,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
             let markerInfo:Dictionary<String, String> = ["url" : cafeObjects[i].url];
             
             let cafeMarker:GMSMarker = GMSMarker()
+            cafeMarker.icon = pinImg
             cafeMarker.title = cafeObjects[i].store_name
             cafeMarker.position = CLLocationCoordinate2DMake(d_lat,d_lng)
             cafeMarker.appearAnimation = kGMSMarkerAnimationPop
@@ -164,6 +168,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         }
         
         if backupAry.count > 500{
+            mapview.clear()
             backupAry = []
         }
         
@@ -211,7 +216,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         let zoom:Double = Double(position_.zoom)
         let lat:Double = Double(position_.target.latitude)
         let lng:Double = Double(position_.target.longitude)
-        let distance:Double = Double(zoom)*500
+        let distance:Double = Double(zoom)*30
         
         let ud = NSUserDefaults.standardUserDefaults()
         ud.setObject(NSString(format:"%f", lat), forKey: "lat")
@@ -219,6 +224,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
         ud.setObject(NSString(format:"%f", distance), forKey: "distance")
         //tmpfunc()
         //あとはsearchcafeを呼び出すのみ
+        println("idleatcameraposition")
         searchcafe(lat,lng:lng,dist:distance)
     }
     
@@ -230,7 +236,7 @@ class ViewController: UIViewController,GMSMapViewDelegate,CLLocationManagerDeleg
             let url:String = userdata["url"]!
             
             let web:Web = self.storyboard.instantiateViewControllerWithIdentifier("web_board") as Web
-            
+            web.serviceUrl = url
             self.navigationController.pushViewController(web, animated: true)
             
             
